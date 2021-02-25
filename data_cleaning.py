@@ -25,12 +25,10 @@ for column in df.columns:
     df[column].fillna(df[column].mode()[0], inplace=True)
 #make sure we don't have more missing data    
 df.info()
-#let's make gender numerical data with male=1 and female=0
-df['gender'] = df['gender'].apply(lambda x: 1 if 'Male' in x else 0)
 #let's see relevent experience values
 df['relevent_experience'].value_counts()
-#we have two values so let's make 1=relevent experience and 0= no relevet experince 
-df['relevent_experience'] = df['relevent_experience'].apply(lambda x: 1 if 'Has relevent experience' in x else 0)
+#we have two values so let's make 'yes'=relevent experience and 'no'= no relevet experince 
+df['relevent_experience'] = df['relevent_experience'].apply(lambda x: 'Yes' if 'Has relevent experience' in x else 'No')
 #let's see the unique values of enrolled_university
 df['enrolled_university'].value_counts()
 #we have 3 categories so leave it like that. Education level and major values
@@ -50,4 +48,4 @@ df['last_new_job']=df['last_new_job'].apply(lambda x: x.replace('never','0'))
 df['last_new_job'] = df['last_new_job'].astype(int)
 df.info()
 #we don't have missing values and we get numerical and categorical data. Save it
-df.to_csv('data_cleaned.csv')
+df.to_csv('data_cleaned.csv', index=False)
