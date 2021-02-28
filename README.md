@@ -1,5 +1,5 @@
 # Job Change of Data Scientists: Project Overview
-* Predict the if a data scientist candidate will work for a company
+* Predict if a data scientist candidate will work for a company
 * Cleaned over 20,000 data extracted from Kaggle
 * Optimized Logistic Regression, K-Nearest Neighbours, Decission-Tree Classifier and Random Forest Classifier using GridsearchCV to reach the best model.
 ## Code and Resources 
@@ -7,9 +7,9 @@
 * **Pckages:** pandas, numpy, sklearn, matplotlib, seaborn.
 * **Data Source:** https://www.kaggle.com/arashnic/hr-analytics-job-change-of-data-scientists
 ## Data Cleaning
-* Fill most of the missing values in categorical data with the mode
+* Filled most of the missing values in categorical data with the mode
 * Simplified some categorical values
-* Deleted special character from experience to convert it to int64
+* Deleted special characters from experience to convert it to int64
 * Put the company size in the same format 
 * Deleted special characters from old-new-job (years since last and new job) to be int64
 ## Exploratory data analysis
@@ -27,7 +27,7 @@ Interest of changing job by gender, university enrollment, education level and c
 ## Model Building 
 First, I transformed the categorical variables into dummy variables. I also split the data into train and tests sets with a test size of 20%
 
-I tried four different models and evaluated them using f1 score because the data is mbalanced and the false negatives are equally important as false positives
+I tried four different models and evaluated them using f1 score because the data is imbalanced and the false negatives are equally important as false positives
 
 The four differnt models are:
 * **Logistic Regression:** - basic for any classification model
